@@ -10,6 +10,8 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 ### Inputs
 For more information on these inputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#input)
 
+- `repo`: The name of the repo. Default: current repo
+- `owner`: The owner of the repo. Default: current repo's owner
 - `tag_name`: The name of the tag for this release
 - `release_name`: The name of the release
 - `draft`: `true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`
