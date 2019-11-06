@@ -7,7 +7,20 @@ async function run() {
     const github = new GitHub(process.env.GITHUB_TOKEN);
 
     // Get owner and repo from context of payload that triggered the action
-    const { owner, repo } = context.repo;
+    const { defaultOwner, defaultRepo } = context.repo;
+
+    const inputRepo = core.getInput('repo', { required: false })
+    if (inputRepo != "") {
+      repo = inputRepo
+    } else {
+      repo = defaultRepo
+    }
+    const inputOwner = core.getInput('owner', { required: false })
+    if (owner != "") {
+      owner = inputOwner
+    } else {
+      owner = defaultOwner
+    }
 
     // Get the inputs from the workflow file: https://github.com/actions/toolkit/tree/master/packages/core#inputsoutputs
     const tagName = core.getInput('tag_name', { required: true });

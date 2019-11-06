@@ -2,6 +2,12 @@ name: 'Create a Release'
 description: 'Create a release on your repository'
 author: 'GitHub'
 inputs:
+  repo:
+    description: 'The name of the repo. If not given, defaults to the current repo'
+    required: false
+  owner:
+    description: 'The owner of the repo. If not given, defaults to the current repo\'s owner'
+    required: false
   tag_name:
     description: 'The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag'
     required: true
