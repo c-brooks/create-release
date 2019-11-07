@@ -16,7 +16,7 @@ async function run() {
       repo = defaultRepo
     }
     const inputOwner = core.getInput('owner', { required: false })
-    if (owner != "") {
+    if (inputOwner != "") {
       owner = inputOwner
     } else {
       owner = defaultOwner
